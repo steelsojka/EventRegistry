@@ -1,13 +1,17 @@
 /**
  * EventRegistry.js v1.0.0
+ * @author Steven Sojka
  * 
  * This module extends EventEmitter.js to allow event binding to 
- * classes or objects and register them to a specific event emitter.\
+ * classes or objects and register them to a specific event emitter.
+ *
+ * https://github.com/steelsojka/EventRegistry
  * 
- * @author Steven Sojka
+ * - Licensed under the MIT license
+ * 
  * @extends {EventEmitter}
- * @example
  * @requires EventEmitter.js
+ * @example
  * 
  * var Person = function(name) {
  *   this.name = name;
