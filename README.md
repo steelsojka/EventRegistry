@@ -22,41 +22,41 @@ Simply load the javascript files as such:
 Examples
 ========
 ```javascript
-	//Generic Person class
-	var Person = function(name) {
-			this.name = name;
-		};
+//Generic Person class
+var Person = function(name) {
+	this.name = name;
+};
 
-		// Person prototype
-		Person.prototype = {
-			greet : function() {
-				alert("Hi, my name is " + this.name)
-			},
-			reply : function() {
-				alert('Nice to meet you! I\'m ' + this.name);
-			}
-		};
+// Person prototype
+Person.prototype = {
+	greet : function() {
+		alert("Hi, my name is " + this.name)
+	},
+	reply : function() {
+		alert('Nice to meet you! I\'m ' + this.name);
+	}
+};
 
-		//Create new emitter
-		var emitter = new EventEmitter();
+//Create new emitter
+var emitter = new EventEmitter();
 
-		//Register the Person class to the emitter.
-		//This can also be done at the instance or object level.
-		emitter.register(Person);
+//Register the Person class to the emitter.
+//This can also be done at the instance or object level.
+emitter.register(Person);
 
-		//Create 2 Persons'
-		var me = new Person("Steven");
-		var you = new Person("David");
+//Create 2 Persons'
+var me = new Person("Steven");
+var you = new Person("David");
 
-		me.on('greet', function() {
-			this.reply();
-		});
+me.on('greet', function() {
+	this.reply();
+});
 
-		//Greet and then emit to everyone on this emitter
-		you.greet();
-		you.emit('greet');
+//Greet and then emit to everyone on this emitter
+you.greet();
+you.emit('greet');
 ```
 
 Licenses
 ========
-Licenses under the MIT license
+Licensed under the MIT license
