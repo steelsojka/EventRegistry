@@ -74,11 +74,20 @@
       },
       emit : function() {
         self.emit.apply(self, arguments);
+      },
+      once : function(event, listener, scope) {
+        var _scope = scope || this;
+        self.once.call(self, event, listener, scope);
+      },
+      off : function(event, listener, scope) {
+        var _scope = scope || this;
+        self.off.call(self, event, listener, _scope);
       }
     };
 
-    //Alias for on
-    _prototype.bind = _prototype.on;
+    //Aliases for on and off
+    _prototype.bind   = _prototype.addListener    = _prototype.on;
+    _prototype.unbind = _prototype.removeListener = _prototype.off;
 
     if(_isArray(object)) {
       for (var i = object.length - 1; i >= 0; i--) {
