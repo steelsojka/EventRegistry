@@ -14,14 +14,14 @@ How to
 Since this is an extension to EventEmitter.js you must load EventEmitter.js first.  It can be found here: https://github.com/Wolfy87/EventEmitter
 
 Simply load the javascript files as such:
-<code>
+```html
 <script type="text/javascript" src="EventEmitter.js"></script>
 <script type="text/javascript" src="EventRegistry.js"></script>
-</code>
+```
 
 Examples
 ========
-
+```javascript
 	//Generic Person class
 	var Person = function(name) {
 			this.name = name;
@@ -55,3 +55,8 @@ Examples
 		//Greet and then emit to everyone on this emitter
 		you.greet();
 		you.emit('greet');
+```
+
+Licenses
+========
+Licenses under the MIT license
