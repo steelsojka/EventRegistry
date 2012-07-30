@@ -15,8 +15,8 @@ Since this is an extension to EventEmitter.js you must load EventEmitter.js firs
 
 Simply load the javascript files as such:
 
-<script type="text/javascript" src="EventEmitter.js"></script>
-<script type="text/javascript" src="EventRegistry.js"></script>
+ <script type="text/javascript" src="EventEmitter.js"></script>
+ <script type="text/javascript" src="EventRegistry.js"></script>
 
 Examples
 ========
