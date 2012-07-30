@@ -1,12 +1,12 @@
-EventRegistry
+EventRegistry.js
 =============
 
-EventRegistry extension for EventEmitter.js
+Event registration extension for EventEmitter.js
 
 Uses
 ====
 
-Registers any class or object with a specified EventEmitter.  The object or object prototype is extended to allow the objects to use EventEmitter functions such as on, bind, off, and emit.  Objects can communicate through events instead of hard coding dependencies and using hard coded callbacks.
+Registers any class or object to a specified EventEmitter.  The object or object prototype is extended to allow the objects to use EventEmitter functions such as on, bind, off, and emit.  Objects can communicate through events instead of hard coding dependencies and using hard coded callbacks.
 
 How to
 ======
