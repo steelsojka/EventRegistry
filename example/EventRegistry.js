@@ -48,7 +48,9 @@
  * 
  */
 
-var EventEmitter = (function(EventEmitter) {
+;var EventEmitter = (function(EventEmitter) {
+
+  'use strict'
 
   //The current EventEmitter prototype
   var EE_PROTO = EventEmitter.extend();
@@ -100,6 +102,7 @@ var EventEmitter = (function(EventEmitter) {
 
   //Internal extend object function
   var _extend = function(obj1, obj2) {
+    var key;
     for(key in obj2) {
       if(obj2.hasOwnProperty(key)) {
         obj1[key] = obj2[key];
