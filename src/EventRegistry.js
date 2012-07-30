@@ -92,7 +92,7 @@
     if(_isArray(object)) {
       for (var i = object.length - 1; i >= 0; i--) {
         _setProto(object[i], _prototype);
-      };
+      }
     } else {
       _setProto(object, _prototype);
     }
