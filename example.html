@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript" src="EventEmitter.js"></script>
+	<script type="text/javascript" src="EventRegister.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		var Person = function(name) {
+			this.name = name;
+		};
+
+		Person.prototype = {
+			greet : function() {
+				alert("Hi, my name is " + this.name)
+			}
+		};
+
+		var emitter = new EventEmitter();
+
+		
+		var me = new Person("Steven");
+		var you = new Person("David");
+
+		// me.on('greet', function() {
+		// 	alert("No thank you, " + this.name);
+		// });
+		// you.on('greet', function() {
+		// 	alert("Uhhhh, what " + this.name);
+		// });
+		// me.on('change', function() {
+		// 	this.greet();
+		// });
+	</script>
+</body>
+</html>
