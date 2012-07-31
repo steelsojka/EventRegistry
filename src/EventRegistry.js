@@ -58,7 +58,7 @@
 
   //The current EventEmitter prototype
   var EE_PROTO;
-  if(extend in EventEmitter)
+  if("extend" in EventEmitter)
     EE_PROTO = EventEmitter.extend();
   else
     EE_PROTO = _extend({}, EventEmitter.prototype);
@@ -136,4 +136,3 @@
   exports.EventEmitter = EventEmitter;
 
 }(this, EventEmitter));  //Pass in global EventEmitter object
-
