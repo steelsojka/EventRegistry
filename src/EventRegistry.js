@@ -1,5 +1,5 @@
 /**
- * EventRegistry.js v1.0.0
+ * EventRegistry.js v1.0.1
  * @author Steven Sojka
  *
  * This module extends EventEmitter.js to allow event binding to
@@ -52,15 +52,20 @@
  *
  */
 
-;var EventEmitter = (function(EventEmitter) {
+(function(exports, EventEmitter) {
 
   'use strict'
 
   //The current EventEmitter prototype
-  var EE_PROTO = EventEmitter.extend();
+  var EE_PROTO;
+  if(extend in EventEmitter)
+    EE_PROTO = EventEmitter.extend();
+  else
+    EE_PROTO = _extend({}, EventEmitter.prototype);
 
   /**
    * Registers an object or object instance to a specific event emitter.
+   *
    * @param  {Function|Object|Array} object Object, Function class, or Array of objects
    *                                        that will be tied to an event emitter.
    * @return {Null}
@@ -86,8 +91,8 @@
     };
 
     //Aliases for on and off
-    _prototype.bind   = _prototype.addListener    = _prototype.on;
-    _prototype.unbind = _prototype.removeListener = _prototype.off;
+    _prototype.addListener    = _prototype.on;
+    _prototype.removeListener = _prototype.off;
 
     if(_isArray(object)) {
       for (var i = object.length - 1; i >= 0; i--) {
@@ -96,7 +101,9 @@
     } else {
       _setProto(object, _prototype);
     }
-  }
+
+    return this;
+  };
 
   // Set new EventEmitter prototype
   EventEmitter.prototype = EE_PROTO;
@@ -126,7 +133,7 @@
     return obj1;
   };
 
-  //Return extened EventEmitter
-  return EventEmitter
+  exports.EventEmitter = EventEmitter;
 
-}(EventEmitter));  //Pass in global EventEmitter object
+}(this, EventEmitter));  //Pass in global EventEmitter object
+
